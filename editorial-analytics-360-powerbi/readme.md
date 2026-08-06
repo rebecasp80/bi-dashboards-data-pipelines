@@ -17,30 +17,55 @@ El objetivo es apoyar decisiones estratégicas sobre catálogo, ventas, clientes
 ## 📁 Estructura del Repositorio
 
 editorial-analytics-360-powerbi/
+
 ├─ data/
+
 │   ├─ clientes.csv
+
 │   ├─ libros.csv
+
 │   ├─ editoriales.csv
+
 │   ├─ temas.csv
+
 │   └─ clientes_libros.csv
+
 ├─ reports/
+
 │   ├─ Analisis_estrategico_catalogo_editorial.pbix
+
 │   ├─ Consultoria_estrategia_editorial_360.pbix
+
 │   └─ Inteligencia_negocio_analisis_predictivo_editorial.pbix
+
 ├─ docs/
+
 │   ├─ Actividad - Análisis estratégico de catálogo editorial.pdf
+
 │   ├─ Actividad - Inteligencia de Negocio y Análisis Predictivo Editorial.pdf
+
 │   ├─ Actividad - Consultoría de estrategia editorial 360°.pdf
+
 │   ├─ Actividad - Guía de implementación métricas críticas.pdf
+
 │   └─ Actividad - Ingeniería de Datos y Business Intelligence.pdf
+
 ├─ images/
+
 │   ├─ dashboard_overview.png
+
 │   ├─ mapa_ventas_ciudades.png
+
 │   ├─ forecast_ventas.png
+
 │   ├─ key_influencers.png
+
 │   └─ treemap_editoriales.png
+
 ├─ README.md
+
 ├─ LICENSE.txt
+
 └─ requirements.txt
 
 ---
