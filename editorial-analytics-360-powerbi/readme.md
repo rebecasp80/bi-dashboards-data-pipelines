@@ -16,7 +16,6 @@ El objetivo es apoyar decisiones estratégicas sobre catálogo, ventas, clientes
 
 ## 📁 Estructura del Repositorio
 
-```plaintext
 editorial-analytics-360-powerbi/
 ├─ data/
 │   ├─ clientes.csv
