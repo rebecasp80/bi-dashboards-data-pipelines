@@ -1,0 +1,1866 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0512.1636                               -->
+<workbook original-version='18.1' source-build='2026.1.2 (20261.26.0512.1636)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Unir filas (Varias conexiones)' inline='true' name='federated.09dc49m0d8jiud188qpj61i5r5r9' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='cyclistic_year_summary' name='textscan.0kyk8gy16j3dmu1dh2o7l0crwmfk'>
+            <connection class='textscan' directory='C:/Users/selen/OneDrive/Escritorio/Cursos/Curso Google Business Intelligence/NYC Citi Bike Trips' filename='cyclistic_year_summary.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='cyclistic_summer_summary' name='textscan.0ttv4tl1tp5izv1ak663y02luo0e'>
+            <connection class='textscan' directory='C:/Users/selen/OneDrive/Escritorio/Cursos/Curso Google Business Intelligence/NYC Citi Bike Trips' filename='cyclistic_summer_summary.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='postal_codes' name='textscan.0q26wo100d8m3t184tnfk0vvsdp3'>
+            <connection class='textscan' directory='C:/Users/selen/OneDrive/Escritorio/Cursos/Curso Google Business Intelligence/NYC Citi Bike Trips' filename='postal_codes.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.0kyk8gy16j3dmu1dh2o7l0crwmfk' name='cyclistic_year_summary.csv' table='[cyclistic_year_summary#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='es_ES'>
+              <column datatype='string' name='usertype' ordinal='0' />
+              <column datatype='integer' name='zip_code_start' ordinal='1' />
+              <column datatype='string' name='borough_start' ordinal='2' />
+              <column datatype='string' name='neighborhood_start' ordinal='3' />
+              <column datatype='integer' name='zip_code_end' ordinal='4' />
+              <column datatype='string' name='borough_end' ordinal='5' />
+              <column datatype='string' name='neighborhood_end' ordinal='6' />
+              <column datatype='date' name='start_day' ordinal='7' />
+              <column datatype='date' name='stop_day' ordinal='8' />
+              <column datatype='string' name='day_mean_temperature' ordinal='9' />
+              <column datatype='string' name='day_mean_wind_speed' ordinal='10' />
+              <column datatype='string' name='day_total_precipitation' ordinal='11' />
+              <column datatype='string' name='trip_minutes' ordinal='12' />
+              <column datatype='integer' name='trip_count' ordinal='13' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0kyk8gy16j3dmu1dh2o7l0crwmfk' name='cyclistic_summer_summary.csv' table='[cyclistic_summer_summary#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='es_ES'>
+              <column datatype='string' name='usertype' ordinal='0' />
+              <column datatype='integer' name='zip_code_start' ordinal='1' />
+              <column datatype='string' name='borough_start' ordinal='2' />
+              <column datatype='string' name='neighborhood_start' ordinal='3' />
+              <column datatype='integer' name='zip_code_end' ordinal='4' />
+              <column datatype='string' name='borough_end' ordinal='5' />
+              <column datatype='string' name='neighborhood_end' ordinal='6' />
+              <column datatype='date' name='start_day' ordinal='7' />
+              <column datatype='date' name='stop_day' ordinal='8' />
+              <column datatype='string' name='day_mean_temperature' ordinal='9' />
+              <column datatype='string' name='day_mean_wind_speed' ordinal='10' />
+              <column datatype='string' name='day_total_precipitation' ordinal='11' />
+              <column datatype='string' name='trip_minutes' ordinal='12' />
+              <column datatype='integer' name='trip_count' ordinal='13' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0kyk8gy16j3dmu1dh2o7l0crwmfk' name='postal_codes.csv' table='[postal_codes#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='es_ES'>
+              <column datatype='integer' name='zip' ordinal='0' />
+              <column datatype='string' name='borough' ordinal='1' />
+              <column datatype='string' name='neighborhood' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[borough]' value='[postal_codes.csv].[borough]' />
+          <map key='[borough_end (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[borough_end]' />
+          <map key='[borough_end]' value='[cyclistic_year_summary.csv].[borough_end]' />
+          <map key='[borough_start (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[borough_start]' />
+          <map key='[borough_start]' value='[cyclistic_year_summary.csv].[borough_start]' />
+          <map key='[day_mean_temperature (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[day_mean_temperature]' />
+          <map key='[day_mean_temperature]' value='[cyclistic_year_summary.csv].[day_mean_temperature]' />
+          <map key='[day_mean_wind_speed (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[day_mean_wind_speed]' />
+          <map key='[day_mean_wind_speed]' value='[cyclistic_year_summary.csv].[day_mean_wind_speed]' />
+          <map key='[day_total_precipitation (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[day_total_precipitation]' />
+          <map key='[day_total_precipitation]' value='[cyclistic_year_summary.csv].[day_total_precipitation]' />
+          <map key='[neighborhood]' value='[postal_codes.csv].[neighborhood]' />
+          <map key='[neighborhood_end (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[neighborhood_end]' />
+          <map key='[neighborhood_end]' value='[cyclistic_year_summary.csv].[neighborhood_end]' />
+          <map key='[neighborhood_start (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[neighborhood_start]' />
+          <map key='[neighborhood_start]' value='[cyclistic_year_summary.csv].[neighborhood_start]' />
+          <map key='[start_day (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[start_day]' />
+          <map key='[start_day]' value='[cyclistic_year_summary.csv].[start_day]' />
+          <map key='[stop_day (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[stop_day]' />
+          <map key='[stop_day]' value='[cyclistic_year_summary.csv].[stop_day]' />
+          <map key='[trip_count (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[trip_count]' />
+          <map key='[trip_count]' value='[cyclistic_year_summary.csv].[trip_count]' />
+          <map key='[trip_minutes (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[trip_minutes]' />
+          <map key='[trip_minutes]' value='[cyclistic_year_summary.csv].[trip_minutes]' />
+          <map key='[usertype (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[usertype]' />
+          <map key='[usertype]' value='[cyclistic_year_summary.csv].[usertype]' />
+          <map key='[zip]' value='[postal_codes.csv].[zip]' />
+          <map key='[zip_code_end (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[zip_code_end]' />
+          <map key='[zip_code_end]' value='[cyclistic_year_summary.csv].[zip_code_end]' />
+          <map key='[zip_code_start (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv].[zip_code_start]' />
+          <map key='[zip_code_start]' value='[cyclistic_year_summary.csv].[zip_code_start]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[postal_codes.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_ES&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>usertype</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[usertype]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>usertype</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zip_code_start</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zip_code_start]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>zip_code_start</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>borough_start</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[borough_start]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>borough_start</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>neighborhood_start</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[neighborhood_start]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>neighborhood_start</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zip_code_end</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zip_code_end]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>zip_code_end</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>borough_end</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[borough_end]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>borough_end</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>neighborhood_end</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[neighborhood_end]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>neighborhood_end</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_day</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[start_day]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>start_day</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stop_day</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[stop_day]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>stop_day</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_mean_temperature</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[day_mean_temperature]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>day_mean_temperature</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_mean_wind_speed</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[day_mean_wind_speed]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>day_mean_wind_speed</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_total_precipitation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[day_total_precipitation]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>day_total_precipitation</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trip_minutes</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[trip_minutes]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>trip_minutes</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trip_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[trip_count]</local-name>
+            <parent-name>[cyclistic_year_summary.csv]</parent-name>
+            <remote-alias>trip_count</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>usertype</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[usertype (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>usertype</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zip_code_start</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zip_code_start (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>zip_code_start</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>borough_start</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[borough_start (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>borough_start</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>neighborhood_start</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[neighborhood_start (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>neighborhood_start</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zip_code_end</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zip_code_end (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>zip_code_end</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>borough_end</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[borough_end (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>borough_end</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>neighborhood_end</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[neighborhood_end (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>neighborhood_end</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>start_day</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[start_day (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>start_day</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stop_day</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[stop_day (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>stop_day</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_mean_temperature</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[day_mean_temperature (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>day_mean_temperature</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_mean_wind_speed</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[day_mean_wind_speed (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>day_mean_wind_speed</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>day_total_precipitation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[day_total_precipitation (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>day_total_precipitation</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trip_minutes</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[trip_minutes (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>trip_minutes</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>trip_count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[trip_count (cyclistic_summer_summary.csv)]</local-name>
+            <parent-name>[cyclistic_summer_summary.csv]</parent-name>
+            <remote-alias>trip_count</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zip</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[zip]</local-name>
+            <parent-name>[postal_codes.csv]</parent-name>
+            <remote-alias>zip</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>borough</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[borough]</local-name>
+            <parent-name>[postal_codes.csv]</parent-name>
+            <remote-alias>borough</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>neighborhood</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[neighborhood]</local-name>
+            <parent-name>[postal_codes.csv]</parent-name>
+            <remote-alias>neighborhood</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+            <object-id>[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Trip Minutes (Numeric)' datatype='integer' name='[Calculation_1672918003777538]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='INT([trip_minutes])' />
+      </column>
+      <column caption='Trip Duration (Hours)' datatype='real' name='[Calculation_1672918004019203]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_1672918003777538] / 60' />
+      </column>
+      <column caption='Trip Date' datatype='date' name='[Calculation_1672918004252676]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='DATE([start_day])' />
+      </column>
+      <column caption='Season' datatype='string' name='[Calculation_1672918004445189]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF MONTH([Calculation_1672918004252676]) IN (6,7,8) THEN &quot;Summer&quot;&#13;&#10;ELSEIF MONTH([Calculation_1672918004252676]) IN (9,10,11) THEN &quot;Fall&quot;&#13;&#10;ELSEIF MONTH([Calculation_1672918004252676]) IN (12,1,2) THEN &quot;Winter&quot;&#13;&#10;ELSE &quot;Spring&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Zip_USA' datatype='string' name='[Calculation_1672918014038022]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal'>
+        <calculation class='tableau' formula='STR([zip]) + &quot;, USA&quot;' />
+      </column>
+      <column caption='Zip_USA_clean' datatype='string' name='[Calculation_1672918020403207]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal'>
+        <calculation class='tableau' formula='STR([zip]) + &quot; USA&quot;' />
+      </column>
+      <column caption='Zip_USA_final' datatype='string' name='[Calculation_1672918022045704]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal'>
+        <calculation class='tableau' formula='RIGHT(&quot;00000&quot; + STR([zip]), 5)' />
+      </column>
+      <column caption='cyclistic_summer_summary.csv' datatype='table' name='[__tableau_internal_object_id__].[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]' role='measure' type='quantitative' />
+      <column caption='cyclistic_year_summary.csv' datatype='table' name='[__tableau_internal_object_id__].[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]' role='measure' type='quantitative' />
+      <column caption='postal_codes.csv' datatype='table' name='[__tableau_internal_object_id__].[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]' role='measure' type='quantitative' />
+      <column caption='Borough' datatype='string' name='[borough]' role='dimension' type='nominal' />
+      <column caption='Borough End (Cyclistic Summer Summary.Csv)' datatype='string' name='[borough_end (cyclistic_summer_summary.csv)]' role='dimension' type='nominal' />
+      <column caption='Borough End' datatype='string' name='[borough_end]' role='dimension' type='nominal' />
+      <column caption='Borough Start (Cyclistic Summer Summary.Csv)' datatype='string' name='[borough_start (cyclistic_summer_summary.csv)]' role='dimension' type='nominal' />
+      <column caption='Borough Start' datatype='string' name='[borough_start]' role='dimension' type='nominal' />
+      <column caption='Day Mean Temperature (Cyclistic Summer Summary.Csv)' datatype='string' name='[day_mean_temperature (cyclistic_summer_summary.csv)]' role='dimension' type='nominal' />
+      <column caption='Day Mean Temperature' datatype='string' name='[day_mean_temperature]' role='dimension' type='nominal' />
+      <column caption='Day Mean Wind Speed (Cyclistic Summer Summary.Csv)' datatype='string' name='[day_mean_wind_speed (cyclistic_summer_summary.csv)]' role='dimension' type='nominal' />
+      <column caption='Day Mean Wind Speed' datatype='string' name='[day_mean_wind_speed]' role='dimension' type='nominal' />
+      <column caption='Day Total Precipitation (Cyclistic Summer Summary.Csv)' datatype='string' name='[day_total_precipitation (cyclistic_summer_summary.csv)]' role='dimension' type='nominal' />
+      <column caption='Day Total Precipitation' datatype='string' name='[day_total_precipitation]' role='dimension' type='nominal' />
+      <column caption='Neighborhood' datatype='string' name='[neighborhood]' role='dimension' type='nominal' />
+      <column caption='Neighborhood End (Cyclistic Summer Summary.Csv)' datatype='string' name='[neighborhood_end (cyclistic_summer_summary.csv)]' role='dimension' type='nominal' />
+      <column caption='Neighborhood End' datatype='string' name='[neighborhood_end]' role='dimension' type='nominal' />
+      <column caption='Neighborhood Start (Cyclistic Summer Summary.Csv)' datatype='string' name='[neighborhood_start (cyclistic_summer_summary.csv)]' role='dimension' type='nominal' />
+      <column caption='Neighborhood Start' datatype='string' name='[neighborhood_start]' role='dimension' type='nominal' />
+      <column caption='Start Day (Cyclistic Summer Summary.Csv)' datatype='date' name='[start_day (cyclistic_summer_summary.csv)]' role='dimension' type='ordinal' />
+      <column caption='Start Day' datatype='date' name='[start_day]' role='dimension' type='ordinal' />
+      <column caption='Stop Day (Cyclistic Summer Summary.Csv)' datatype='date' name='[stop_day (cyclistic_summer_summary.csv)]' role='dimension' type='ordinal' />
+      <column caption='Stop Day' datatype='date' name='[stop_day]' role='dimension' type='ordinal' />
+      <column caption='Trip Count (Cyclistic Summer Summary.Csv)' datatype='integer' name='[trip_count (cyclistic_summer_summary.csv)]' role='measure' type='quantitative' />
+      <column caption='Trip Count' datatype='integer' name='[trip_count]' role='measure' type='quantitative' />
+      <column caption='Trip Minutes (Cyclistic Summer Summary.Csv)' datatype='string' name='[trip_minutes (cyclistic_summer_summary.csv)]' role='dimension' type='nominal' />
+      <column caption='Trip Minutes' datatype='string' name='[trip_minutes]' role='dimension' type='nominal' />
+      <column caption='Usertype (Cyclistic Summer Summary.Csv)' datatype='string' name='[usertype (cyclistic_summer_summary.csv)]' role='dimension' type='nominal' />
+      <column caption='Usertype' datatype='string' name='[usertype]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Zip' datatype='integer' default-format='*00000' name='[zip]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column aggregation='Sum' caption='Zip Code End (Cyclistic Summer Summary.Csv)' datatype='integer' default-format='*00000' name='[zip_code_end (cyclistic_summer_summary.csv)]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column aggregation='Sum' caption='Zip Code End' datatype='integer' default-format='*00000' name='[zip_code_end]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column aggregation='Sum' caption='Zip Code Start (Cyclistic Summer Summary.Csv)' datatype='integer' default-format='*00000' name='[zip_code_start (cyclistic_summer_summary.csv)]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column aggregation='Sum' caption='Zip Code Start' datatype='integer' default-format='*00000' name='[zip_code_start]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column-instance column='[Calculation_1672918004445189]' derivation='None' name='[none:Calculation_1672918004445189:nk]' pivot='key' type='nominal' />
+      <column-instance column='[borough]' derivation='None' name='[none:borough:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='es_ES' class='hyper' dbname='Data/TableauTemp/#TableauTemp_0vmy6h70n8ajqf1b92anx0vdllpr.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='06/10/2026 09:59:05 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3' table='[Extract].[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]' type='table' />
+            <relation name='cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3' table='[Extract].[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]' type='table' />
+            <relation name='postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B' table='[Extract].[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]' type='table' />
+          </relation>
+          <cols>
+            <map key='[borough]' value='[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B].[borough]' />
+            <map key='[borough_end (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[borough_end]' />
+            <map key='[borough_end]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[borough_end]' />
+            <map key='[borough_start (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[borough_start]' />
+            <map key='[borough_start]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[borough_start]' />
+            <map key='[day_mean_temperature (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[day_mean_temperature]' />
+            <map key='[day_mean_temperature]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[day_mean_temperature]' />
+            <map key='[day_mean_wind_speed (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[day_mean_wind_speed]' />
+            <map key='[day_mean_wind_speed]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[day_mean_wind_speed]' />
+            <map key='[day_total_precipitation (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[day_total_precipitation]' />
+            <map key='[day_total_precipitation]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[day_total_precipitation]' />
+            <map key='[neighborhood]' value='[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B].[neighborhood]' />
+            <map key='[neighborhood_end (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[neighborhood_end]' />
+            <map key='[neighborhood_end]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[neighborhood_end]' />
+            <map key='[neighborhood_start (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[neighborhood_start]' />
+            <map key='[neighborhood_start]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[neighborhood_start]' />
+            <map key='[start_day (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[start_day]' />
+            <map key='[start_day]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[start_day]' />
+            <map key='[stop_day (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[stop_day]' />
+            <map key='[stop_day]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[stop_day]' />
+            <map key='[trip_count (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[trip_count]' />
+            <map key='[trip_count]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[trip_count]' />
+            <map key='[trip_minutes (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[trip_minutes]' />
+            <map key='[trip_minutes]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[trip_minutes]' />
+            <map key='[usertype (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[usertype]' />
+            <map key='[usertype]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[usertype]' />
+            <map key='[zip]' value='[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B].[zip]' />
+            <map key='[zip_code_end (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[zip_code_end]' />
+            <map key='[zip_code_end]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[zip_code_end]' />
+            <map key='[zip_code_start (cyclistic_summer_summary.csv)]' value='[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3].[zip_code_start]' />
+            <map key='[zip_code_start]' value='[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3].[zip_code_start]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>usertype</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[usertype]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>usertype</remote-alias>
+              <ordinal>0</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zip_code_start</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[zip_code_start]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>zip_code_start</remote-alias>
+              <ordinal>1</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>64</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>borough_start</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[borough_start]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>borough_start</remote-alias>
+              <ordinal>2</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>neighborhood_start</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[neighborhood_start]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>neighborhood_start</remote-alias>
+              <ordinal>3</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zip_code_end</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[zip_code_end]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>zip_code_end</remote-alias>
+              <ordinal>4</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>45</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>borough_end</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[borough_end]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>borough_end</remote-alias>
+              <ordinal>5</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>neighborhood_end</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[neighborhood_end]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>neighborhood_end</remote-alias>
+              <ordinal>6</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>start_day</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[start_day]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>start_day</remote-alias>
+              <ordinal>7</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2052</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stop_day</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[stop_day]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>stop_day</remote-alias>
+              <ordinal>8</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2050</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_mean_temperature</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[day_mean_temperature]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>day_mean_temperature</remote-alias>
+              <ordinal>9</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>967</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_mean_wind_speed</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[day_mean_wind_speed]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>day_mean_wind_speed</remote-alias>
+              <ordinal>10</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>128</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_total_precipitation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[day_total_precipitation]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>day_total_precipitation</remote-alias>
+              <ordinal>11</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>208</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>trip_minutes</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[trip_minutes]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>trip_minutes</remote-alias>
+              <ordinal>12</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>134</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>trip_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[trip_count]</local-name>
+              <parent-name>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</parent-name>
+              <remote-alias>trip_count</remote-alias>
+              <ordinal>13</ordinal>
+              <family>cyclistic_year_summary.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>362</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>usertype</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[usertype (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>usertype</remote-alias>
+              <ordinal>14</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zip_code_start</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[zip_code_start (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>zip_code_start</remote-alias>
+              <ordinal>15</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>34</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>borough_start</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[borough_start (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>borough_start</remote-alias>
+              <ordinal>16</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>neighborhood_start</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[neighborhood_start (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>neighborhood_start</remote-alias>
+              <ordinal>17</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zip_code_end</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[zip_code_end (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>zip_code_end</remote-alias>
+              <ordinal>18</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>41</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>borough_end</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[borough_end (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>borough_end</remote-alias>
+              <ordinal>19</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>neighborhood_end</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[neighborhood_end (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>neighborhood_end</remote-alias>
+              <ordinal>20</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>start_day</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[start_day (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>start_day</remote-alias>
+              <ordinal>21</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>79</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>stop_day</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[stop_day (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>stop_day</remote-alias>
+              <ordinal>22</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>116</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_mean_temperature</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[day_mean_temperature (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>day_mean_temperature</remote-alias>
+              <ordinal>23</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>66</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_mean_wind_speed</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[day_mean_wind_speed (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>day_mean_wind_speed</remote-alias>
+              <ordinal>24</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>42</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>day_total_precipitation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[day_total_precipitation (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>day_total_precipitation</remote-alias>
+              <ordinal>25</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>trip_minutes</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[trip_minutes (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>trip_minutes</remote-alias>
+              <ordinal>26</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>75</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>trip_count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[trip_count (cyclistic_summer_summary.csv)]</local-name>
+              <parent-name>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</parent-name>
+              <remote-alias>trip_count</remote-alias>
+              <ordinal>27</ordinal>
+              <family>cyclistic_summer_summary.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>297</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>zip</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[zip]</local-name>
+              <parent-name>[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]</parent-name>
+              <remote-alias>zip</remote-alias>
+              <ordinal>28</ordinal>
+              <family>postal_codes.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>192</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>borough</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[borough]</local-name>
+              <parent-name>[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]</parent-name>
+              <remote-alias>borough</remote-alias>
+              <ordinal>29</ordinal>
+              <family>postal_codes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>neighborhood</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[neighborhood]</local-name>
+              <parent-name>[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]</parent-name>
+              <remote-alias>neighborhood</remote-alias>
+              <ordinal>30</ordinal>
+              <family>postal_codes.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>47</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LES_RES' />
+              <object-id>[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:borough:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Bronx&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Queens&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;New Jersey&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Manhattan&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Staten Island&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Brooklyn&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_1672918004445189:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Winter&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Spring&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Summer&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Fall&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Estados Unidos&quot;' />
+        <semantic-value key='[ZipCode].[Name]' value='%null%' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='cyclistic_summer_summary.csv' id='cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3'>
+            <properties context=''>
+              <relation connection='textscan.0kyk8gy16j3dmu1dh2o7l0crwmfk' name='cyclistic_summer_summary.csv' table='[cyclistic_summer_summary#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_ES'>
+                  <column datatype='string' name='usertype' ordinal='0' />
+                  <column datatype='integer' name='zip_code_start' ordinal='1' />
+                  <column datatype='string' name='borough_start' ordinal='2' />
+                  <column datatype='string' name='neighborhood_start' ordinal='3' />
+                  <column datatype='integer' name='zip_code_end' ordinal='4' />
+                  <column datatype='string' name='borough_end' ordinal='5' />
+                  <column datatype='string' name='neighborhood_end' ordinal='6' />
+                  <column datatype='date' name='start_day' ordinal='7' />
+                  <column datatype='date' name='stop_day' ordinal='8' />
+                  <column datatype='string' name='day_mean_temperature' ordinal='9' />
+                  <column datatype='string' name='day_mean_wind_speed' ordinal='10' />
+                  <column datatype='string' name='day_total_precipitation' ordinal='11' />
+                  <column datatype='string' name='trip_minutes' ordinal='12' />
+                  <column datatype='integer' name='trip_count' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3' table='[Extract].[cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3]' type='table' />
+            </properties>
+          </object>
+          <object caption='cyclistic_year_summary.csv' id='cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3'>
+            <properties context=''>
+              <relation connection='textscan.0kyk8gy16j3dmu1dh2o7l0crwmfk' name='cyclistic_year_summary.csv' table='[cyclistic_year_summary#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_ES'>
+                  <column datatype='string' name='usertype' ordinal='0' />
+                  <column datatype='integer' name='zip_code_start' ordinal='1' />
+                  <column datatype='string' name='borough_start' ordinal='2' />
+                  <column datatype='string' name='neighborhood_start' ordinal='3' />
+                  <column datatype='integer' name='zip_code_end' ordinal='4' />
+                  <column datatype='string' name='borough_end' ordinal='5' />
+                  <column datatype='string' name='neighborhood_end' ordinal='6' />
+                  <column datatype='date' name='start_day' ordinal='7' />
+                  <column datatype='date' name='stop_day' ordinal='8' />
+                  <column datatype='string' name='day_mean_temperature' ordinal='9' />
+                  <column datatype='string' name='day_mean_wind_speed' ordinal='10' />
+                  <column datatype='string' name='day_total_precipitation' ordinal='11' />
+                  <column datatype='string' name='trip_minutes' ordinal='12' />
+                  <column datatype='integer' name='trip_count' ordinal='13' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3' table='[Extract].[cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3]' type='table' />
+            </properties>
+          </object>
+          <object caption='postal_codes.csv' id='postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B'>
+            <properties context=''>
+              <relation connection='textscan.0kyk8gy16j3dmu1dh2o7l0crwmfk' name='postal_codes.csv' table='[postal_codes#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_ES'>
+                  <column datatype='integer' name='zip' ordinal='0' />
+                  <column datatype='string' name='borough' ordinal='1' />
+                  <column datatype='string' name='neighborhood' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B' table='[Extract].[postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[zip_code_start]' />
+                <expression op='[zip_code_start (cyclistic_summer_summary.csv)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[zip_code_end]' />
+                <expression op='[zip_code_end (cyclistic_summer_summary.csv)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3' />
+            <second-end-point object-id='cyclistic_summer_summary.csv_09EBBD3A25AD4B2AAD05CB30823175A3' />
+          </relationship>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[zip_code_start]' />
+                <expression op='[zip]' />
+              </expression>
+              <expression op='='>
+                <expression op='[zip_code_end]' />
+                <expression op='[zip]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='cyclistic_year_summary.csv_79AAA4B8691B4EA082E7BB8B54F908A3' />
+            <second-end-point object-id='postal_codes.csv_2A4C7556E5A74A82A1C28D96D45DA34B' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Duración promedio por tipo de usuario'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Unir filas (Varias conexiones)' name='federated.09dc49m0d8jiud188qpj61i5r5r9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09dc49m0d8jiud188qpj61i5r5r9'>
+            <column caption='Trip Minutes (Numeric)' datatype='integer' name='[Calculation_1672918003777538]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='INT([trip_minutes])' />
+            </column>
+            <column caption='Trip Duration (Hours)' datatype='real' name='[Calculation_1672918004019203]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_1672918003777538] / 60' />
+            </column>
+            <column-instance column='[Calculation_1672918004019203]' derivation='Avg' name='[avg:Calculation_1672918004019203:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[usertype]' derivation='None' name='[none:usertype:nk]' pivot='key' type='nominal' />
+            <column caption='Trip Minutes' datatype='string' name='[trip_minutes]' role='dimension' type='nominal' />
+            <column caption='Usertype' datatype='string' name='[usertype]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:usertype:nk]' value='81' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:usertype:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.09dc49m0d8jiud188qpj61i5r5r9].[avg:Calculation_1672918004019203:qk]</rows>
+        <cols>[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:usertype:nk]</cols>
+      </table>
+      <simple-id uuid='{4913A34D-A9FC-4B70-A97D-31325ECF5254}' />
+    </worksheet>
+    <worksheet name='Mapa de estaciones por código postal'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Unir filas (Varias conexiones)' name='federated.09dc49m0d8jiud188qpj61i5r5r9' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.09dc49m0d8jiud188qpj61i5r5r9'>
+            <column caption='Zip_USA_final' datatype='string' name='[Calculation_1672918022045704]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal'>
+              <calculation class='tableau' formula='RIGHT(&quot;00000&quot; + STR([zip]), 5)' />
+            </column>
+            <column caption='Borough' datatype='string' name='[borough]' role='dimension' type='nominal' />
+            <column caption='Neighborhood' datatype='string' name='[neighborhood]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1672918022045704]' derivation='None' name='[none:Calculation_1672918022045704:nk]' pivot='key' type='nominal' />
+            <column-instance column='[borough]' derivation='None' name='[none:borough:nk]' pivot='key' type='nominal' />
+            <column-instance column='[neighborhood]' derivation='None' name='[none:neighborhood:nk]' pivot='key' type='nominal' />
+            <column-instance column='[trip_count]' derivation='Sum' name='[sum:trip_count:qk]' pivot='key' type='quantitative' />
+            <column caption='Trip Count' datatype='integer' name='[trip_count]' role='measure' type='quantitative' />
+            <column aggregation='Sum' caption='Zip' datatype='integer' default-format='*00000' name='[zip]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:borough:nk]' />
+              <size column='[federated.09dc49m0d8jiud188qpj61i5r5r9].[sum:trip_count:qk]' />
+              <text column='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:neighborhood:nk]' />
+              <lod column='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:Calculation_1672918022045704:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.09dc49m0d8jiud188qpj61i5r5r9].[Latitude (generated)]</rows>
+        <cols>[federated.09dc49m0d8jiud188qpj61i5r5r9].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{6A976127-003C-45A2-B080-CE9181827A30}' />
+    </worksheet>
+    <worksheet name='Viajes por estación'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Unir filas (Varias conexiones)' name='federated.09dc49m0d8jiud188qpj61i5r5r9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09dc49m0d8jiud188qpj61i5r5r9'>
+            <column caption='Trip Date' datatype='date' name='[Calculation_1672918004252676]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATE([start_day])' />
+            </column>
+            <column caption='Season' datatype='string' name='[Calculation_1672918004445189]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF MONTH([Calculation_1672918004252676]) IN (6,7,8) THEN &quot;Summer&quot;&#13;&#10;ELSEIF MONTH([Calculation_1672918004252676]) IN (9,10,11) THEN &quot;Fall&quot;&#13;&#10;ELSEIF MONTH([Calculation_1672918004252676]) IN (12,1,2) THEN &quot;Winter&quot;&#13;&#10;ELSE &quot;Spring&quot;&#13;&#10;END' />
+            </column>
+            <column-instance column='[Calculation_1672918004445189]' derivation='None' name='[none:Calculation_1672918004445189:nk]' pivot='key' type='nominal' />
+            <column caption='Start Day' datatype='date' name='[start_day]' role='dimension' type='ordinal' />
+            <column-instance column='[trip_count]' derivation='Sum' name='[sum:trip_count:qk]' pivot='key' type='quantitative' />
+            <column caption='Trip Count' datatype='integer' name='[trip_count]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:Calculation_1672918004445189:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.09dc49m0d8jiud188qpj61i5r5r9].[sum:trip_count:qk]</rows>
+        <cols>[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:Calculation_1672918004445189:nk]</cols>
+      </table>
+      <simple-id uuid='{B1A88B00-12D2-48E2-8DE3-BD62120E5925}' />
+    </worksheet>
+    <worksheet name='Viajes por mes'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Unir filas (Varias conexiones)' name='federated.09dc49m0d8jiud188qpj61i5r5r9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09dc49m0d8jiud188qpj61i5r5r9'>
+            <column caption='Trip Date' datatype='date' name='[Calculation_1672918004252676]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='DATE([start_day])' />
+            </column>
+            <column-instance column='[Calculation_1672918004252676]' derivation='Month' name='[mn:Calculation_1672918004252676:ok]' pivot='key' type='ordinal' />
+            <column caption='Start Day' datatype='date' name='[start_day]' role='dimension' type='ordinal' />
+            <column-instance column='[trip_count]' derivation='Sum' name='[sum:trip_count:qk]' pivot='key' type='quantitative' />
+            <column caption='Trip Count' datatype='integer' name='[trip_count]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <text column='[federated.09dc49m0d8jiud188qpj61i5r5r9].[sum:trip_count:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#a0cbe8' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.09dc49m0d8jiud188qpj61i5r5r9].[sum:trip_count:qk]</rows>
+        <cols>[federated.09dc49m0d8jiud188qpj61i5r5r9].[mn:Calculation_1672918004252676:ok]</cols>
+      </table>
+      <simple-id uuid='{7118A031-B5E4-4E3C-87F4-4B8B22BE7117}' />
+    </worksheet>
+    <worksheet name='Viajes por tipo de usuario'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Unir filas (Varias conexiones)' name='federated.09dc49m0d8jiud188qpj61i5r5r9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.09dc49m0d8jiud188qpj61i5r5r9'>
+            <column-instance column='[usertype]' derivation='None' name='[none:usertype:nk]' pivot='key' type='nominal' />
+            <column-instance column='[trip_count]' derivation='Sum' name='[sum:trip_count:qk]' pivot='key' type='quantitative' />
+            <column caption='Trip Count' datatype='integer' name='[trip_count]' role='measure' type='quantitative' />
+            <column caption='Usertype' datatype='string' name='[usertype]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:usertype:nk]' />
+              <text column='[federated.09dc49m0d8jiud188qpj61i5r5r9].[sum:trip_count:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.09dc49m0d8jiud188qpj61i5r5r9].[sum:trip_count:qk]</rows>
+        <cols>[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:usertype:nk]</cols>
+      </table>
+      <simple-id uuid='{062673E4-D55B-440F-8690-D3DC6878D17E}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Cyclistic Dashboard'>
+      <style />
+      <size maxheight='900' maxwidth='1200' sizing-mode='range' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98122' id='7' param='horz' type-v2='layout-flow' w='98666' x='667' y='939'>
+            <zone h='98122' id='5' type-v2='layout-basic' w='98666' x='667' y='939'>
+              <zone h='49061' id='3' name='Mapa de estaciones por código postal' w='49333' x='667' y='939'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49061' id='10' name='Viajes por tipo de usuario' w='33917' x='65416' y='939'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49061' id='12' name='Viajes por mes' w='37583' x='667' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49061' id='13' name='Viajes por estación' w='30917' x='38250' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49061' id='15' name='Duración promedio por tipo de usuario' w='30166' x='69167' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='24061' id='9' name='Mapa de estaciones por código postal' pane-specification-id='0' param='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:borough:nk]' type-v2='color' w='15416' x='50000' y='939'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='10563' id='11' name='Viajes por tipo de usuario' pane-specification-id='0' param='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:usertype:nk]' type-v2='color' w='15416' x='50000' y='25000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='14437' id='14' name='Viajes por estación' pane-specification-id='0' param='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:Calculation_1672918004445189:nk]' type-v2='color' w='15416' x='50000' y='35563'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1650' minheight='1650' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='17' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98122' id='16' param='vert' type-v2='layout-flow' w='98666' x='667' y='939'>
+                <zone fixed-size='280' h='49061' id='3' is-fixed='true' name='Mapa de estaciones por código postal' w='49333' x='667' y='939'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='24061' id='9' name='Mapa de estaciones por código postal' pane-specification-id='0' param='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:borough:nk]' type-v2='color' w='15416' x='50000' y='939'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49061' id='10' is-fixed='true' name='Viajes por tipo de usuario' w='33917' x='65416' y='939'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='10563' id='11' name='Viajes por tipo de usuario' pane-specification-id='0' param='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:usertype:nk]' type-v2='color' w='15416' x='50000' y='25000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49061' id='12' is-fixed='true' name='Viajes por mes' w='37583' x='667' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49061' id='13' is-fixed='true' name='Viajes por estación' w='30917' x='38250' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='14437' id='14' name='Viajes por estación' pane-specification-id='0' param='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:Calculation_1672918004445189:nk]' type-v2='color' w='15416' x='50000' y='35563'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49061' id='15' is-fixed='true' name='Duración promedio por tipo de usuario' w='30166' x='69167' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{DAC629D1-B703-4695-B066-36BF2C9C4DC7}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='37'>
+    <window class='worksheet' name='Mapa de estaciones por código postal'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card pane-specification-id='0' param='[federated.09dc49m0d8jiud188qpj61i5r5r9].[sum:trip_count:qk]' type='size' />
+            <card pane-specification-id='0' param='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:borough:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='4' />
+      </viewpoint>
+      <simple-id uuid='{C3D29765-DA69-410B-A29C-3D4B8C165264}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Viajes por tipo de usuario'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card pane-specification-id='0' param='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:usertype:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4E332CC3-CDF7-48FF-AFD2-91960F8F529A}' />
+    </window>
+    <window class='worksheet' name='Viajes por mes'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{96BD3007-91CB-4D94-BD7B-25A4E70CBA29}' />
+    </window>
+    <window class='worksheet' name='Viajes por estación'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card pane-specification-id='0' param='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:Calculation_1672918004445189:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6729D5A4-734E-40A9-9C07-2E4D23DA6949}' />
+    </window>
+    <window class='worksheet' name='Duración promedio por tipo de usuario'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card pane-specification-id='0' param='[federated.09dc49m0d8jiud188qpj61i5r5r9].[none:usertype:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CFFA31BC-7F85-47DC-8A92-A9026FEDC083}' />
+    </window>
+    <window class='dashboard' name='Cyclistic Dashboard'>
+      <viewpoints>
+        <viewpoint name='Duración promedio por tipo de usuario'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Mapa de estaciones por código postal'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Viajes por estación'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Viajes por mes'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Viajes por tipo de usuario'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{15EB6F54-0CD1-401D-85D9-9B77132AE194}' />
+    </window>
+  </windows>
+</workbook>
