@@ -27,18 +27,31 @@ La suite combina arquitecturas de modelado en estrella, procesos ETL/ELT optimiz
 ## 🛠️ Estructura del Repositorio
 
 bi-dashboards-data-pipelines/
+
 │
+
 ├── editorial-analytics-360-powerbi/     # Proyecto Power BI (Modelo Estrella & DAX)
+
 │   ├── data/
+
 │   ├── dashboard/
+
 │   └── README.md
+
 │
+
 ├── NYC-citi-bike-trips-bi/             # Proyecto Tableau + Python (EDA & Visualización)
+
 │   ├── notebooks/
+
 │   ├── data/
+
 │   └── README.md
+
 │
+
 ├── LICENSE.txt
+
 └── README.md
 
 ---
@@ -54,4 +67,5 @@ Rebeca Soto — Data Analyst, BI & AI Operations Specialist
 
 ## 📜 Licencia
 Este proyecto está distribuido bajo la licencia MIT. 
+
 Consulta el archivo LICENSE.txt para más detalles.
