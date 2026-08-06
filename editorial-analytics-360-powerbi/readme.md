@@ -159,4 +159,5 @@ Proyecto desarrollado por Rebeca Soto como parte de su portafolio profesional de
 
 ## 📄 Licencia
 Este proyecto se distribuye bajo licencia MIT.
+
 Consulta el archivo LICENSE.txt para más detalles.
